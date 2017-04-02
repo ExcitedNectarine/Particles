@@ -11,14 +11,6 @@ float randomFloat(const float from, const float to)
     return dist(engine);
 }
 
-int randomInt(const int from, const int to)
-{
-    unsigned int seed = static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count());
-    static std::default_random_engine engine(seed);
-    std::uniform_int_distribution<int> dist(from, to);
-    return dist(engine);
-}
-
 class ParticleSystem : public sf::Drawable
 {
 public:
